@@ -22,14 +22,14 @@ public class DetachStateOneToOne {
 
         Customer customer=new Customer();
         customer.setId("C001");
-        customer.setName("Nimal");
+        customer.setName("Kamal");
         customer.setAddress("Galle");
         customer.setContact("0124152454");
         customer.setItem(item);
 
         Orders orders=new Orders();
         orders.setOrderId("O001");
-        orders.setCustomerId("I001");
+        orders.setCustomerId("C001");
         orders.setCustomer(customer);
 
         customer.getOrdersList().add(orders);
