@@ -3,6 +3,8 @@ package lk.ijse.OneToMany.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Customer")
@@ -30,6 +32,18 @@ public class Customer {
     public void setItem(Item item) {
         this.item = item;
     }
+
+    @OneToMany(mappedBy = "customer")
+    private List<Orders>ordersList=new ArrayList<>();
+
+    public List<Orders> getOrdersList() {
+        return ordersList;
+    }
+
+    public void setOrdersList(List<Orders> ordersList) {
+        this.ordersList = ordersList;
+    }
+
 
     public Customer() {
     }

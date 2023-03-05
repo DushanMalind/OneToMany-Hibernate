@@ -1,16 +1,38 @@
 package lk.ijse.OneToMany.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "Orders")
 public class Orders {
 
+    @Id
+    @GenericGenerator(name = "string_based",strategy = "lk.ijse.OneToMany.Generator.OrdersIDGenerator")
+    @GeneratedValue(generator = "string_based")
+    @Column(name = "orders_id",length = 10)
     private String orderId;
-    private LocalDate date;
+    @CreationTimestamp
+    private Date date;
+    @Column(name = "customer_id")
     private String customerId;
+
+
+    @ManyToOne
+    private Customer customer;
+
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Orders() {
     }
