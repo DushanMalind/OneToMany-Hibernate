@@ -1,10 +1,24 @@
 package lk.ijse.OneToMany.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Item")
 public class Item {
+    @Id
+    @GenericGenerator(name = "string_based",strategy = "lk.ijse.OneToMany.Generator.ItemIDGenerator")
+    @GeneratedValue(generator = "string_based")
+    @Column(name = "Item_code",length = 10)
     private String code;
+    @Column(name = "description")
     private String description;
+    @Column(name = "unitPrice")
     private double unitPrice;
+    @Column(name = "QtyOnHand")
     private int qtyOnHand;
+
 
     public Item() {
     }

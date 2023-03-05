@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="lk.ijse.OneToMany.entity.Customer" table="customer">
+    <class name="lk.ijse.OneToMany.entity.Customer" table="Customer">
         <id name="id" column="customerId">
             <generator class="lk.ijse.OneToMany.Generator.CustomerIDGenerator"/>
         </id>

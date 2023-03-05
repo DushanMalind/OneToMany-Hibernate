@@ -1,6 +1,7 @@
 package lk.ijse.OneToMany.util;
 
 import lk.ijse.OneToMany.entity.Customer;
+import lk.ijse.OneToMany.entity.Item;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,7 +12,7 @@ public class SessionFactoryConfiguaration {
     private final SessionFactory sessionFactory;
 
     private SessionFactoryConfiguaration(){
-        sessionFactory=new Configuration().configure().addAnnotatedClass(Customer.class).buildSessionFactory();
+        sessionFactory=new Configuration().configure().addAnnotatedClass(Customer.class).addAnnotatedClass(Item.class).buildSessionFactory();
 
     }
 

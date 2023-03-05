@@ -1,10 +1,35 @@
 package lk.ijse.OneToMany.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Customer")
 public class Customer {
+    @Id
+    @GenericGenerator(name = "string_based",strategy = "lk.ijse.OneToMany.Generator.CustomerIDGenerator")
+    @GeneratedValue(generator = "string_based")
+    @Column(name = "Customer_Id",length = 10)
     private String id;
+    @Column(name = "Customer_name")
     private String name;
+    @Column(name = "Customer_address")
     private String address;
+    @Column(name = "Customer_contact")
     private String contact;
+
+//    cascade = CascadeType.REFRESH,fetch = FetchType.EAGER
+    @OneToOne()
+    private Item item;
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
 
     public Customer() {
     }
