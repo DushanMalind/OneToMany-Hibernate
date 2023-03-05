@@ -2,6 +2,7 @@ package lk.ijse.OneToMany.state;
 
 import lk.ijse.OneToMany.entity.Customer;
 import lk.ijse.OneToMany.entity.Item;
+import lk.ijse.OneToMany.entity.OrderDeatils;
 import lk.ijse.OneToMany.entity.Orders;
 import lk.ijse.OneToMany.util.SessionFactoryConfiguaration;
 import org.hibernate.Session;
@@ -32,11 +33,22 @@ public class DetachStateOneToOne {
         orders.setCustomerId("C001");
         orders.setCustomer(customer);
 
+        OrderDeatils orderDeatils=new OrderDeatils();
+        orderDeatils.setCode("O001");
+        orderDeatils.setItemCode("I001");
+        orderDeatils.setUnitPrice(2000);
+        orderDeatils.setQty(10);
+
+        orders.getOrderDeatilsList().add(orderDeatils);
+
+
+
         customer.getOrdersList().add(orders);
 
         session.save(item);
         session.save(customer);
         session.save(orders);
+        session.save(orderDeatils);
 
 
         transaction.commit();

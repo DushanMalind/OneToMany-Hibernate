@@ -5,7 +5,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Orders")
@@ -33,6 +35,19 @@ public class Orders {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+
+    @ManyToMany
+    private List<OrderDeatils> orderDeatilsList=new ArrayList<>();
+
+    public List<OrderDeatils> getOrderDeatilsList() {
+        return orderDeatilsList;
+    }
+
+    public void setOrderDeatilsList(List<OrderDeatils> orderDeatilsList) {
+        this.orderDeatilsList = orderDeatilsList;
+    }
+
 
     public Orders() {
     }
