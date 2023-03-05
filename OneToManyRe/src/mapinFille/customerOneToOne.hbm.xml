@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+    <!--<class name="lk.ijse.OneToMany.entity.Customer" table="CUSTOMER">
+        <id name="id" type="java.lang.String">
+            <column name="Customer_Id" />
+            <generator class="foreign">
+                <param name="property">item</param>
+            </generator>
+        </id>
+        <one-to-one name="item" class="lk.ijse.OneToMany.entity.Item"
+                    constrained="true"></one-to-one>
+
+        <property name="name" type="string">
+            <column name="Customer_name"></column>
+        </property>
+        <property name="address" type="string">
+            <column name="Customer_address"></column>
+        </property>
+        <property name="contact" type="string">
+            <column name="Customer_contact"></column>
+        </property>
+    </class>-->
+
+</hibernate-mapping>

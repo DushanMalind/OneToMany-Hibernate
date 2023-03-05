@@ -1,0 +1,18 @@
+<project xmlns="">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.journaldev.hibernate</groupId>
+    <artifactId>HibernateOneToOneMapping</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.5.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.0.5</version>
+        </dependency>
+    </dependencies>
+</project>

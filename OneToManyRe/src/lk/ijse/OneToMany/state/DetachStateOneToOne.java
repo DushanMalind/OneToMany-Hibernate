@@ -18,13 +18,13 @@ public class DetachStateOneToOne {
         item.setQtyOnHand(10);
         item.setUnitPrice(2000);
 
+
         Customer customer=new Customer();
         customer.setId("C001");
         customer.setName("Nimal");
         customer.setAddress("Galle");
         customer.setContact("0124152454");
         customer.setItem(item);
-
 
 
         session.save(item);

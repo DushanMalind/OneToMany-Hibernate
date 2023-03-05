@@ -10,7 +10,7 @@ public class Item {
     @Id
     @GenericGenerator(name = "string_based",strategy = "lk.ijse.OneToMany.Generator.ItemIDGenerator")
     @GeneratedValue(generator = "string_based")
-    @Column(name = "Item_code",length = 10)
+    @Column(name = "item_id",length = 10)
     private String code;
     @Column(name = "description")
     private String description;
@@ -19,6 +19,15 @@ public class Item {
     @Column(name = "QtyOnHand")
     private int qtyOnHand;
 
+   /* private Customer customer;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }*/
 
     public Item() {
     }
@@ -60,15 +69,5 @@ public class Item {
 
     public void setQtyOnHand(int qtyOnHand) {
         this.qtyOnHand = qtyOnHand;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "code='" + code + '\'' +
-                ", description='" + description + '\'' +
-                ", unitPrice=" + unitPrice +
-                ", qtyOnHand=" + qtyOnHand +
-                '}';
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--<class name="lk.ijse.OneToMany.entity.Item" table="Item" >
+        <id name="code" type="java.lang.String">
+            <column name="Item_code" />
+            <generator class="identity" />
+        </id>
+        <property name="description" type="date">
+            <column name="description" />
+        </property>
+        <property name="unitPrice" type="double">
+            <column name="unitPrice" />
+        </property>
+        <property name="qtyOnHand" type="int">
+            <column name="qtyOnHand" />
+        </property>
+        <one-to-one name="customer" class="lk.ijse.OneToMany.entity.Customer"
+                    cascade="save-update" />
+    </class>
+-->
+
+
+</hibernate-mapping>
