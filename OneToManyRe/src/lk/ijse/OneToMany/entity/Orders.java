@@ -20,8 +20,8 @@ public class Orders {
     private String orderId;
     @CreationTimestamp
     private Date date;
-    @Column(name = "customer_id")
-    private String customerId;
+    /*@Column
+    private String customerId;*/
 
 
     @ManyToOne
@@ -49,12 +49,26 @@ public class Orders {
     }
 
 
+
+
+    @ManyToMany(mappedBy = "ordersList")
+    private List<Item> itemList=new ArrayList<>();
+
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
+    }
+
+
     public Orders() {
     }
 
     public Orders(String orderId, String customerId) {
         this.orderId = orderId;
-        this.customerId = customerId;
+       /* this.customerId = customerId;*/
     }
 
     public String getOrderId() {
@@ -65,20 +79,20 @@ public class Orders {
         this.orderId = orderId;
     }
 
-    public String getCustomerId() {
+   /* public String getCustomerId() {
         return customerId;
     }
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
-    }
+    }*/
 
     @Override
     public String toString() {
         return "Orders{" +
                 "orderId='" + orderId + '\'' +
                 ", date=" + date +
-                ", customerId='" + customerId + '\'' +
+//                ", customerId='" + customerId + '\'' +
                 '}';
     }
 }
